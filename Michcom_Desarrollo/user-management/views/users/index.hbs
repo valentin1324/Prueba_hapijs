@@ -1,0 +1,18 @@
+{{!-- {{#extend "body"}}
+  <h2>Usuarios</h2>
+  <ul>
+    {{#each users}}
+      <li>{{this}}</li>
+      <h1>holavalentin</h1>
+    {{/each}}
+  </ul>
+{{/extend}} --}}
+
+{{#block "content"}}
+  <h2>Lista de Usuarios</h2>
+  <ul>
+    {{#each users}}
+      <li>{{this.name}} - {{this.email}}</li>
+    {{/each}}
+  </ul>
+{{/block}}

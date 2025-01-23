@@ -1,0 +1,37 @@
+
+<form action="{{#if user}}/users/{{user._id}}{{else}}/users{{/if}}" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" id="name" name="name" class="form-control" value="{{user.name}}" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="lastname" class="form-label">Apellido</label>
+    <input type="text" id="lastname" name="lastname" class="form-control" value="{{user.lastname}}" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="rut" class="form-label">RUT</label>
+    <input type="text" id="rut" name="rut" class="form-control" value="{{user.rut}}" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo Electrónico</label>
+    <input type="email" id="email" name="email" class="form-control" value="{{user.email}}" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese nueva contraseña">
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    {{#if user}}Actualizar Usuario{{else}}Crear Usuario{{/if}}
+  </button>
+</form>
+
+<script>
+    $(document).ready(function () {
+      $('#userTable').DataTable();
+    });
+  </script>
